@@ -46,6 +46,7 @@ class SignUpScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       TextFormField(
+                        controller: _nameController,
                         decoration: InputDecoration(
                             label: const Text("Name"),
                             floatingLabelBehavior: FloatingLabelBehavior.never,
@@ -60,6 +61,7 @@ class SignUpScreen extends StatelessWidget {
                         ),
                       ),
                       TextFormField(
+                        controller: _phoneNumberController,
                         decoration: InputDecoration(
                             label: const Text("Phone Number"),
                             floatingLabelBehavior: FloatingLabelBehavior.never,
