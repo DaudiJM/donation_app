@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:core';
 
 class PledgeScreen extends StatelessWidget {
-  const PledgeScreen({Key? key}) : super(key: key);
+  PledgeScreen({Key? key}) : super(key: key);
+  final TextEditingController _amountController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +15,40 @@ class PledgeScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-              child: TextFormField(),
+              padding: const EdgeInsets.all(10.0),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  suffixText: "Tzs ",
+                  fillColor: Colors.teal.withOpacity(0.2),
+                  hintText: "Amount",
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                    borderSide: const BorderSide(
+                      width: 1,
+                      color: Colors.teal
+                    )
+                  )
+                ),
+              ),
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+              padding: EdgeInsets.all(10.0),
               child: FilledButton(
                 onPressed: null,
-                child: Text("Submit"),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll<Color>(Colors.teal),
+                ),
+                child: Text(
+                  "Submit",
+                  style: TextStyle(
+                    color: Colors.white
+                  ),
+                ),
               ),
             )
           ],

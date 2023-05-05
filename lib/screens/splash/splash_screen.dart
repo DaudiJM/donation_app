@@ -20,10 +20,18 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.teal,
       body: Center(
-        child: SizedBox(
-          height: 200,
-          child: Image.asset("assets/logo_5.png"),
-        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: SizedBox(
+                height: 200,
+                child: Image.asset("assets/logo_5.png"),
+              ),
+            ),
+            const Text("Donate")
+          ],
+        )
       )
     );
   }

@@ -45,52 +45,44 @@ class SignUpScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      TextFormField(
-                        controller: _nameController,
-                        decoration: InputDecoration(
-                            label: const Text("Name"),
-                            floatingLabelBehavior: FloatingLabelBehavior.never,
-                            filled: true,
-                            fillColor: Colors.white70,
-                            border: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    width: 10
-                                ),
-                                borderRadius: BorderRadius.circular(20)
-                            )
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextFormField(
+                          controller: _nameController,
+                          decoration: InputDecoration(
+                              label: const Text("Name"),
+                              floatingLabelBehavior: FloatingLabelBehavior.never,
+                              filled: true,
+                              fillColor: Colors.white70,
+                              border: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      width: 10
+                                  ),
+                                  borderRadius: BorderRadius.circular(20)
+                              )
+                          ),
                         ),
                       ),
-                      TextFormField(
-                        controller: _phoneNumberController,
-                        decoration: InputDecoration(
-                            label: const Text("Phone Number"),
-                            floatingLabelBehavior: FloatingLabelBehavior.never,
-                            filled: true,
-                            fillColor: Colors.white70,
-                            border: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    width: 10
-                                ),
-                                borderRadius: BorderRadius.circular(20)
-                            )
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextFormField(
+                          controller: _phoneNumberController,
+                          decoration: InputDecoration(
+                              label: const Text("Phone Number"),
+                              floatingLabelBehavior: FloatingLabelBehavior.never,
+                              filled: true,
+                              fillColor: Colors.white70,
+                              border: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      width: 10
+                                  ),
+                                  borderRadius: BorderRadius.circular(20)
+                              )
+                          ),
                         ),
                       ),
-                      // TextFormField(
-                      //   decoration: InputDecoration(
-                      //       label: const Text("Password"),
-                      //       floatingLabelBehavior: FloatingLabelBehavior.never,
-                      //       filled: true,
-                      //       fillColor: Colors.white70,
-                      //       border: OutlineInputBorder(
-                      //           borderSide: const BorderSide(
-                      //               width: 10
-                      //           ),
-                      //           borderRadius: BorderRadius.circular(20)
-                      //       )
-                      //   ),
-                      // ),
                        Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 20),
+                        padding: const EdgeInsets.all(8.0),
                         child: FilledButton(
                           onPressed: () => {
                             _toSignIn(context)

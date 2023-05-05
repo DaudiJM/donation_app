@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:core';
 
+import 'package:mobile/screens/donation/group_collection_summary_screen.dart';
+import 'package:mobile/screens/group/group_members_screen.dart';
+
 class GroupHomeScreen extends StatelessWidget {
   const GroupHomeScreen({Key? key}) : super(key: key);
 
@@ -10,21 +13,24 @@ class GroupHomeScreen extends StatelessWidget {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
+            title: const Text(
+              "Group Name",
+            ),
             bottom: const TabBar(
                 tabs: [
                   Tab(
                     text: "Home",
                   ),
                   Tab(
-                    text: "Members",
+                    text: "Collection",
                   )
                 ]
             ),
           ),
           body: const TabBarView(
             children: [
-              Text("Tab 1"),
-              Text("Tab 2")
+              GroupMembersScreen(),
+              GroupCollectionScreen()
             ],
           ),
         )

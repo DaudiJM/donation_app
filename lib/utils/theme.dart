@@ -30,7 +30,7 @@ ThemeData lightTheme = ThemeData(
   border: OutlineInputBorder(
     borderSide: BorderSide(
       color: Colors.white,
-      style: BorderStyle.solid,
+      // style: BorderStyle.solid,
     )
   ),
   labelStyle: TextStyle(

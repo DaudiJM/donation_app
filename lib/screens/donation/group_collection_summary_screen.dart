@@ -8,10 +8,7 @@ class GroupCollectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Group name"),
-        automaticallyImplyLeading: true,
-      ),
+      backgroundColor: Colors.teal.withOpacity(0.2),
       body: const Padding(
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
         child: Center(

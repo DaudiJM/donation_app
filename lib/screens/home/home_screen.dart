@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/screens/group/SelectMembersScreen.dart';
 import 'dart:core';
+
+import 'package:mobile/screens/home/screens/ContactsScreen.dart';
+import 'package:mobile/screens/home/screens/UserGroupsScreen.dart';
 
 class HomeScreen extends StatefulWidget {
    const HomeScreen({Key? key}) : super(key: key);
@@ -10,6 +14,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentPageIndex = 0;
+
+  void _toCreateGroup(){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => const SelectMembersScreen()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +30,13 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: const Icon(Icons.more_vert),
             padding: const EdgeInsets.symmetric(horizontal: 5),
             itemBuilder: (BuildContext context) => <PopupMenuEntry>[
-              const PopupMenuItem(child: Text("Menu")),
-              const PopupMenuDivider(),
-              const PopupMenuItem(child: Text('Item A')),
-              const PopupMenuItem(child: Text('Item B')),
+               PopupMenuItem(
+                onTap: (){
+                    _toCreateGroup();
+                },
+                child: const Text("New Group")
+              ),
+              const PopupMenuItem(child: Text('Settings')),
             ],
           ),
         ],
@@ -43,6 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: NavigationBar(
         height: 60,
+        shadowColor: Colors.transparent,
         onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
@@ -70,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: <Widget>[
         Container(
           alignment: Alignment.center,
-          child: const Text('Page 1'),
+          child: const UserGroupsScreen(),
         ),
         Container(
           alignment: Alignment.center,
@@ -78,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         Container(
           alignment: Alignment.center,
-          child: const Text('Page 3'),
+          child: const ContactsScreen(),
         ),
       ][currentPageIndex],
     );
