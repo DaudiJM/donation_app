@@ -20,8 +20,14 @@ class _UserGroupsScreenState extends State<UserGroupsScreen> {
     final String? group = prefs.getString('group');
 
     setState(() {
-
+        this.group = group!;
     });
+  }
+
+  @override
+  void initState() {
+    _getGroup();
+    super.initState();
   }
   void _toCreateGroup(){
     Navigator.push(context, MaterialPageRoute(builder: (context) => const SelectMembersScreen()));
