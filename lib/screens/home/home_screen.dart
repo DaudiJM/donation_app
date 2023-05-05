@@ -87,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         Container(
           alignment: Alignment.center,
-          child: const Text('Page 2'),
+          child: const Text('No invitations'),
         ),
         Container(
           alignment: Alignment.center,

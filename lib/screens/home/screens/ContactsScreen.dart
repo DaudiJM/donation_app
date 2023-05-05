@@ -11,7 +11,6 @@ class ContactsScreen extends StatefulWidget {
 }
 
 class _ContactsScreenState extends State<ContactsScreen> {
-
   List<Contact> contacts = [];
 
   void _loadContacts() async {
@@ -28,7 +27,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
     return Scaffold(
       body: Center(
         child: contacts.isNotEmpty ? ListView.builder(
-            itemCount: contacts.length,
+            itemCount: contacts!.length,
             itemBuilder: (BuildContext context, int index){
               return ListTile(
                 leading: const CircleAvatar(

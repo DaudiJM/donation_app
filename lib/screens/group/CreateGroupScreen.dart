@@ -8,7 +8,7 @@ import 'dart:core';
 import '../../utils/User.dart';
 
 class CreateGroupScreen extends StatefulWidget {
-  CreateGroupScreen({super.key, required this.users});
+  const CreateGroupScreen({super.key, required this.users});
 
   final List<User> users;
 
