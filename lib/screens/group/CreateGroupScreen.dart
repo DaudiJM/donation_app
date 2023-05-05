@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/screens/home/home_screen.dart';
 import 'package:mobile/utils/Group.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:core';
@@ -28,6 +29,10 @@ class _CreateGroupScreenState extends State<CreateGroupScreen> {
 
   }
 
+  void _toHome(){
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+  }
+
   void _createGroup() async {
     if(_nameController.text.isNotEmpty){
       Group group = Group();
@@ -35,6 +40,7 @@ class _CreateGroupScreenState extends State<CreateGroupScreen> {
       group.members = widget.users;
 
       prefs.setString("group", group.name);
+      _toHome();
     }
   }
 
