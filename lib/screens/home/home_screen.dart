@@ -15,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentPageIndex = 0;
 
+
   void _toCreateGroup(){
     Navigator.push(context, MaterialPageRoute(builder: (context) => const SelectMembersScreen()));
   }

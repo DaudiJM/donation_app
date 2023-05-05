@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'dart:core';
 
 import 'package:mobile/screens/authentication/sign_up_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
+  void _getUsersData() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+  }
   void _startup(BuildContext context){
     Future.delayed(const Duration(milliseconds: 2000), (){
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignUpScreen()));

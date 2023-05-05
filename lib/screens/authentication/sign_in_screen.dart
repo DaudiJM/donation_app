@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'dart:core';
 
 import 'package:mobile/screens/home/home_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class SignInScreen extends StatelessWidget {
   SignInScreen({Key? key}) : super(key: key);
   final TextEditingController _passwordController = TextEditingController();
 
-  void _toHome(BuildContext context){
+  void _toHome(BuildContext context) async {
     if(_passwordController.text.isNotEmpty){
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
     }

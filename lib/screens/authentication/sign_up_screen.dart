@@ -2,14 +2,22 @@ import 'package:flutter/material.dart';
 import 'dart:core';
 
 import 'package:mobile/screens/authentication/sign_in_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({Key? key}) : super(key: key);
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _phoneNumberController = TextEditingController();
-  
+
+  void _saveUsersData (String name, String msisdn) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString("name", name);
+    prefs.setString("msisdn", msisdn);
+  }
+
   void _toSignIn(BuildContext context){
     if(_nameController.text.isNotEmpty && _phoneNumberController.text.isNotEmpty){
+      _saveUsersData(_nameController.text, _phoneNumberController.text);
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignInScreen()));
     }
   }
