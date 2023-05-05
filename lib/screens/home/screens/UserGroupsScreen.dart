@@ -13,10 +13,10 @@ class UserGroupsScreen extends StatefulWidget {
 }
 
 class _UserGroupsScreenState extends State<UserGroupsScreen> {
-  late String group;
+  late String group = "";
+
   _getGroup() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-
     final String? group = prefs.getString('group');
 
     setState(() {

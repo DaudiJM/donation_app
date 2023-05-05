@@ -17,9 +17,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
   void _loadContacts() async {
     if(await FlutterContacts.requestPermission()){
       contacts = await FlutterContacts.getContacts(withProperties: true, withPhoto: true);
-
       setState(() {
-
       });
     }
   }

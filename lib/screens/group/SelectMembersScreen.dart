@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:core';
 import 'package:flutter_contacts/flutter_contacts.dart';
+import 'package:mobile/screens/group/CreateGroupScreen.dart';
 import 'package:mobile/utils/User.dart';
 
 
@@ -15,12 +16,16 @@ class _SelectMembersScreenState extends State<SelectMembersScreen> {
   List<Contact> contacts = [];
   List<User> selected = [];
 
+  void _toCreateGroupScreen(){
+    if(selected.isNotEmpty){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => CreateGroupScreen(users: selected)));
+    }
+  }
   void _loadContacts() async {
     if(await FlutterContacts.requestPermission()){
       contacts = await FlutterContacts.getContacts(withProperties: true, withPhoto: true);
-
       setState(() {
-
+        contacts = contacts;
       });
     }
   }
@@ -92,7 +97,9 @@ class _SelectMembersScreenState extends State<SelectMembersScreen> {
         child: Text("No contacts"),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          _toCreateGroupScreen();
+        },
         backgroundColor: Colors.teal,
         child: const Icon(
           Icons.send,
